@@ -36,7 +36,7 @@ class ProductService {
 
     async getProducts() {
         logger.info('[ProductService]: getAllProducts function invoked');
-        const products = await this.prisma.product();
+        const products = await this.prisma.product.findMany();
         return products;
     }
 }

@@ -9,6 +9,9 @@ productRouter.post(
     productController.createProduct.bind(productController)
 );
 productRouter.get('/', productController.getProduct.bind(productController));
-productRouter.get('/all', productController.getProducts);
+productRouter.get(
+    '/all',
+    productController.getProducts.bind(productController)
+);
 
 export default productRouter;
