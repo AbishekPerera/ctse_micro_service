@@ -1,0 +1,15 @@
+FROM node:16-alpine
+WORKDIR /
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npx prisma generate
+EXPOSE 4000
+CMD ["npm","start"]
+
+
+#To build the image for development, run the following command:
+# docker build -f Dockerfile.dev -t ctse-dev .
+
+#To run the container for development, run the following command:
+# docker run -p 4000:4000 ctse-dev
