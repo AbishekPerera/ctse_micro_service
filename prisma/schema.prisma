@@ -22,5 +22,5 @@ model Category {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   name        String
   description String?
-  Product     Product[]
+  products    Product[]
 }

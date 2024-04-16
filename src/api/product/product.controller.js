@@ -1,5 +1,5 @@
-import logger from '../../utils/Logger';
 import ProductService from './product.service';
+import Logger from '../../utils/Logger';
 
 class ProductController {
     constructor() {
@@ -8,30 +8,51 @@ class ProductController {
 
     async createProduct(req, res, next) {
         try {
+            Logger.info(
+                '[ProductController]: createProduct controller invoked'
+            );
             const product = await this.productService.createProduct(req.body);
-            res.json({ data: product });
+
+            if (product == null) {
+                res.status(204).json();
+            } else {
+                res.status(200).json({ data: product });
+            }
         } catch (error) {
+            Logger.error(
+                '[ProductController]: Error occured while creating the product'
+            );
             next(error);
         }
     }
 
     async getProduct(req, res, next) {
         try {
-            const product = await this.productService.getProduct(
-                req.body.productId
-            );
-            res.json({ product });
+            Logger.info('[ProductController]: getProduct controller invoked');
+            const product = await this.productService.getProduct(req.body.id);
+
+            if (product === null) {
+                res.status(204).json();
+            } else {
+                res.status(200).json({ product });
+            }
         } catch (error) {
+            Logger.error(
+                '[ProductController]: Error occured while retrieving the product'
+            );
             next(error);
         }
     }
 
     async getProducts(req, res, next) {
         try {
+            Logger.info('[ProductController]: getProducts controller invoked');
             const products = await this.productService?.getProducts();
-            res.json({ products });
+            res.status(200).json({ products });
         } catch (error) {
-            logger.error('[ProductController]: Error Occured');
+            Logger.error(
+                '[ProductController]: Error occured while retrieving products'
+            );
             next(error);
         }
     }
