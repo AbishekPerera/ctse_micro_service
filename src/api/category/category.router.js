@@ -16,5 +16,9 @@ categoryRouter.get(
     '/all',
     categoryController.getCategories.bind(categoryController)
 );
+categoryRouter.post(
+    '/addProduct',
+    categoryController.addProductsToCategory.bind(categoryController)
+);
 
 export default categoryRouter;

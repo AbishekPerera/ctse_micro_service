@@ -61,6 +61,43 @@ class CategoryService {
         );
         return categories;
     }
+
+    async addProductsToCategory(requestData) {
+        Logger.info('[CategoryService]: addProductsToCategory service invoked');
+        const { category, products } = requestData;
+
+        if (!category || !products || products.length === 0) {
+            Logger.error(`[CategoryService]: Missing required data`);
+            return null;
+        }
+
+        const categoryObj = await this.prisma.category.findFirst({
+            where: { id: category },
+        });
+
+        if (!categoryObj) {
+            Logger.error(`[CategoryService]: Category not found`);
+            return null;
+        }
+
+        const productList = await this.prisma.product.findMany({
+            where: { id: { in: products } },
+        });
+
+        const updatedProducts = await Promise.all(
+            productList.map(async (product) => {
+                return await this.prisma.product.update({
+                    where: { id: product.id },
+                    data: { category: { connect: { id: category } } },
+                });
+            })
+        );
+
+        return {
+            message: 'Products added to category successfully',
+            updatedProducts,
+        };
+    }
 }
 
 export default CategoryService;

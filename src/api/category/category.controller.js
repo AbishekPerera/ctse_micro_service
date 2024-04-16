@@ -62,6 +62,28 @@ class CategoryController {
             next(error);
         }
     }
+
+    async addProductsToCategory(req, res, next) {
+        try {
+            Logger.info(
+                '[CategoryController]: addProductsToCategory controller invoked'
+            );
+            const result = await this.categoryService.addProductsToCategory(
+                req.body
+            );
+
+            if (result === null) {
+                res.status(204).json();
+            } else {
+                res.status(200).json({ result });
+            }
+        } catch (error) {
+            Logger.error(
+                '[CategoryController]: Error occured while adding products to the category'
+            );
+            next(error);
+        }
+    }
 }
 
 export default CategoryController;
