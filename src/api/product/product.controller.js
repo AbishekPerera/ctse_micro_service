@@ -13,7 +13,7 @@ class ProductController {
             );
             const product = await this.productService.createProduct(req.body);
 
-            if (product == null) {
+            if (product === null) {
                 res.status(204).json();
             } else {
                 res.status(200).json({ data: product });

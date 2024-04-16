@@ -8,7 +8,7 @@ class ProductService {
 
     async createProduct(productData) {
         Logger.info('[ProductService]: createProduct service invoked');
-        if (productData == null || productData == '') {
+        if (productData === null || productData === '') {
             Logger.error(
                 '[ProductService]: Null value for productData parameter'
             );
@@ -33,7 +33,7 @@ class ProductService {
 
     async getProduct(productId) {
         Logger.info('[ProductService]: getProduct service invoked');
-        if (productId == null || productId == '') {
+        if (productId === null || productId === '') {
             Logger.error(
                 '[ProductService]: Null value for productId parameter'
             );
@@ -44,7 +44,7 @@ class ProductService {
             where: { id: productId },
         });
 
-        if (product == null) {
+        if (product === null) {
             Logger.error(
                 `[ProductService]: Could not find a product with id:${productId}`
             );
