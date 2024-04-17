@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:058264288225:task-definition/ctse_micro_service:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:058264288225:task-definition/ctse_micro_service:3",
     "containerDefinitions": [
         {
             "name": "ctse_micro_service",
@@ -15,7 +15,16 @@
                 }
             ],
             "essential": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "JWT_SECRET",
+                    "value": "jM-z2calN39(C9?%uK(tnX3z{Q#^9F"
+                },
+                {
+                    "name": "DATABASE_URL",
+                    "value": "mongodb+srv://sahanvimukthi00:sahan123@cluster0.9fzoloc.mongodb.net/ctsedb"
+                }
+            ],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
@@ -37,7 +46,7 @@
     "taskRoleArn": "arn:aws:iam::058264288225:role/EcsTaskRole",
     "executionRoleArn": "arn:aws:iam::058264288225:role/EcsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -78,7 +87,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-17T19:22:58.817Z",
+    "registeredAt": "2024-04-17T19:27:36.420Z",
     "registeredBy": "arn:aws:iam::058264288225:root",
     "tags": []
 }
