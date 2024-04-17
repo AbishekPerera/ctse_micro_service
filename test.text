@@ -2,4 +2,13 @@ IAM role change
 
 GitHubActionsECS
 remove AmazonECSTaskExecutionRolePolicy 
+- ok
+
 remove AdministratorAccess
+- error
+Warning: Your docker password is not masked. See https://github.com/aws-actions/amazon-ecr-login#docker-credentials for more information.
+Error: User: arn:aws:sts::***:assumed-role/GitHubActionsECS/Github is not authorized to perform: ecr:GetAuthorizationToken on resource: * because no identity-based policy allows the ecr:GetAuthorizationToken action
+
+remove AmazonECS_FullAccess
+- 
+
