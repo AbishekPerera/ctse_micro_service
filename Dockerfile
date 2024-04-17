@@ -1,10 +1,8 @@
-FROM ubuntu
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get install apache2 -y
-RUN apt-get install apache2-utils -y
-RUN apt-get clean
-EXPOSE 80
-CMD ["apache2ctl", "-D", "FOREGROUND"]
-
-# Dockerfile used for cloud deployment
+FROM node:16-alpine
+WORKDIR /
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npx prisma generate
+EXPOSE 4000
+CMD ["npm","start"]
