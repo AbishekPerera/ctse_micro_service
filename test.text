@@ -1,2 +1,5 @@
 IAM role change 
-AmazonECSTaskExecutionRolePolicy
+
+GitHubActionsECS
+remove AmazonECSTaskExecutionRolePolicy 
+remove AdministratorAccess
