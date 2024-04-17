@@ -10,5 +10,34 @@ Warning: Your docker password is not masked. See https://github.com/aws-actions/
 Error: User: arn:aws:sts::***:assumed-role/GitHubActionsECS/Github is not authorized to perform: ecr:GetAuthorizationToken on resource: * because no identity-based policy allows the ecr:GetAuthorizationToken action
 
 remove AmazonECS_FullAccess
-- 
+- ok 
+
+-----------------------------------
+
+Restricting access to GitHubActionsECS role
+
+Creating new policy "GitHubActionsECSLimitedAccess"
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecs:UpdateService",
+                "ecs:RegisterTaskDefinition",
+                "ecs:DeregisterTaskDefinition",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "ecr:GetAuthorizationToken",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage",
+                "iam:PassRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
 
