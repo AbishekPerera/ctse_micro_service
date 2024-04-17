@@ -1,5 +1,5 @@
 import ProductService from './product.service';
-import Logger from '../../utils/Logger';
+import Logger from '../../util/Logger';
 
 class ProductController {
     constructor() {

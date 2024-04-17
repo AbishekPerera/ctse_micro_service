@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import Logger from '../../utils/Logger';
+import Logger from '../../util/Logger';
 
 class CategoryService {
     constructor() {

@@ -1,5 +1,5 @@
 import CategoryService from './category.service';
-import Logger from '../../utils/Logger';
+import Logger from '../../util/Logger';
 
 class CategoryController {
     constructor() {
