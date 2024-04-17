@@ -11,15 +11,12 @@ class CategoryController {
             Logger.info(
                 '[CategoryController]: createCategory controller invoked'
             );
+
             const category = await this.categoryService.createCategory(
                 req.body
             );
 
-            if (category === null) {
-                res.status(204).json();
-            } else {
-                res.status(200).json({ data: category });
-            }
+            res.status(200).json({ data: category });
         } catch (error) {
             Logger.error(
                 '[CategoryController]: Error occured while creating the category'
@@ -31,15 +28,12 @@ class CategoryController {
     async getCategory(req, res, next) {
         try {
             Logger.info('[CategoryController]: getCategory controller invoked');
+
             const category = await this.categoryService.getCategory(
                 req.body.id
             );
 
-            if (category === null) {
-                res.status(204).json();
-            } else {
-                res.status(200).json({ category });
-            }
+            res.status(200).json({ category });
         } catch (error) {
             Logger.error(
                 '[CategoryController]: Error occured while retrieving the category'
@@ -53,7 +47,9 @@ class CategoryController {
             Logger.info(
                 '[CategoryController]: getCategories controller invoked'
             );
+
             const categories = await this.categoryService.getCategories();
+
             res.status(200).json({ categories });
         } catch (error) {
             Logger.error(
@@ -68,15 +64,12 @@ class CategoryController {
             Logger.info(
                 '[CategoryController]: addProductsToCategory controller invoked'
             );
+
             const result = await this.categoryService.addProductsToCategory(
                 req.body
             );
 
-            if (result === null) {
-                res.status(204).json();
-            } else {
-                res.status(200).json({ result });
-            }
+            res.status(200).json({ result });
         } catch (error) {
             Logger.error(
                 '[CategoryController]: Error occured while adding products to the category'

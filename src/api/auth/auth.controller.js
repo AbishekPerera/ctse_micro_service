@@ -6,7 +6,7 @@ class AuthController {
         try {
             const payload = { username: username };
             const token = jwt.sign(payload, process.env.JWT_SECRET, {
-                expiresIn: '30s',
+                expiresIn: '30m',
             });
             res.status(200).json({ token });
         } catch (error) {
