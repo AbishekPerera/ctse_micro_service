@@ -33,7 +33,7 @@ jobs:
                   args: >
                       -Dsonar.organization=abishekperera
                       -Dsonar.projectKey=ctse_micro_service
-                      -ctse_micro_service.python.coverage.reportPaths=coverage.xml
+                      -ctse_micro_service.node.coverage.reportPaths=coverage.xml
     deploy:
         name: Deploy
         runs-on: ubuntu-latest
