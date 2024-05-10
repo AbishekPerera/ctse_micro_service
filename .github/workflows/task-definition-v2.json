@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:058264288225:task-definition/ctse_micro_service:14",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:058264288225:task-definition/ctse_micro_service:3",
     "containerDefinitions": [
         {
             "name": "ctse_micro_service",
@@ -46,7 +46,7 @@
     "taskRoleArn": "arn:aws:iam::058264288225:role/EcsTaskRole",
     "executionRoleArn": "arn:aws:iam::058264288225:role/EcsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 14,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -87,7 +87,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-05-10T18:26:41.882Z",
+    "registeredAt": "2024-04-17T19:27:36.420Z",
     "registeredBy": "arn:aws:iam::058264288225:root",
     "tags": []
 }
