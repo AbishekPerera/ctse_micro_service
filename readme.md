@@ -86,9 +86,9 @@ For more detailed instructions, please refer to the individual directories and c
 
 ### Authors
 
--   A.S.A Perera
--   K.S.V Perera
--   J.B Mayadunna
--   H.R.A.L.N Ranasinghe
+-   K.S.V Perera - CD part
+-   J.B Mayadunna - CD part
+-   A.S.A Perera - CI part
+-   H.R.A.L.N Ranasinghe - CI part
 
 This README.md provides a clear overview of your project, how to set it up locally, the structure of your microservices, security implementations, and the handling of IAM roles and GitHub Actions ECS for your CI/CD pipeline.
