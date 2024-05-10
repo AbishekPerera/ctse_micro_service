@@ -92,3 +92,4 @@ For more detailed instructions, please refer to the individual directories and c
 -   H.R.A.L.N Ranasinghe - CI part
 
 This README.md provides a clear overview of your project, how to set it up locally, the structure of your microservices, security implementations, and the handling of IAM roles and GitHub Actions ECS for your CI/CD pipeline.
+.
