@@ -86,7 +86,7 @@ For more detailed instructions, please refer to the individual directories and c
 
 ### Authors
 
--   Abishek Perera
+-   A.S.A Perera
 -   K.S.V Perera
 -   J.B Mayadunna
 -   H.R.A.L.N Ranasinghe
